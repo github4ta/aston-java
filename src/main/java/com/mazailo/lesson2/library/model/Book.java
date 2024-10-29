@@ -14,6 +14,18 @@ public class Book {
         this.isbn = isbn;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

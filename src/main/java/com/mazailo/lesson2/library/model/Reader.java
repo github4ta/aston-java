@@ -1,21 +1,37 @@
 package com.mazailo.lesson2.library.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Reader {
     private String id;
     private String name;
-    private List<Book> books;
+    private boolean isInBlackList;
 
     public Reader(String name, String id) {
         this.name = name;
         this.id = id;
-        books = new ArrayList<>();
     }
 
-    public boolean order(Book book) {
-        return books.add(book);
+    public boolean isInBlackList() {
+        return isInBlackList;
+    }
+
+    public void setInBlackList(boolean inBlackList) {
+        isInBlackList = inBlackList;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -23,7 +39,6 @@ public class Reader {
         return "Reader{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", books=" + books +
                 '}';
     }
 }

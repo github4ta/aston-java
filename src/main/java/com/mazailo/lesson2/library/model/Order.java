@@ -7,11 +7,20 @@ public class Order {
     private int id;
     private Reader reader;
     private Book book;
+    private String place;
 
     public Order(Reader reader, Book book) {
         this.reader = reader;
         this.book = book;
         id = CURRENT_ORDER++;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     public int getId() {
