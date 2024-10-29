@@ -1,5 +1,6 @@
 package com.mazailo.lesson2.library.logic;
 
+import com.mazailo.lesson2.library.enums.Place;
 import com.mazailo.lesson2.library.model.Book;
 import com.mazailo.lesson2.library.model.Catalog;
 import com.mazailo.lesson2.library.model.Order;
@@ -14,7 +15,7 @@ public class LibraryService {
         return new Order(reader, book);
     }
 
-    public static void deliveryOrderTo(Order order, String place) {
+    public static void deliveryOrderTo(Order order, Place place) {
         order.setPlace(place);
     }
 

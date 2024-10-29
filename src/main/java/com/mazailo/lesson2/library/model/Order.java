@@ -1,5 +1,7 @@
 package com.mazailo.lesson2.library.model;
 
+import com.mazailo.lesson2.library.enums.Place;
+
 import java.util.Objects;
 
 public class Order {
@@ -7,7 +9,7 @@ public class Order {
     private int id;
     private Reader reader;
     private Book book;
-    private String place;
+    private Place place;
     private boolean isReturned;
 
     public Order(Reader reader, Book book) {
@@ -24,11 +26,11 @@ public class Order {
         isReturned = returned;
     }
 
-    public String getPlace() {
+    public Place getPlace() {
         return place;
     }
 
-    public void setPlace(String place) {
+    public void setPlace(Place place) {
         this.place = place;
     }
 

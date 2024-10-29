@@ -6,6 +6,9 @@ import com.mazailo.lesson2.library.model.Catalog;
 import com.mazailo.lesson2.library.model.Order;
 import com.mazailo.lesson2.library.model.Reader;
 
+import static com.mazailo.lesson2.library.enums.Place.DELIVERY_DESK;
+import static com.mazailo.lesson2.library.enums.Place.READING_ROOM;
+
 public class App {
     public static void main(String[] args) {
         Reader reader = new Reader("John Black", "123");
@@ -17,8 +20,8 @@ public class App {
         searchedBook = LibraryService.getBookByTitle("Red wings");
         searchedBook = LibraryService.getBookByIsbn("1234567890");
 
-        LibraryService.deliveryOrderTo(order, "Delivery Desk");
-        LibraryService.deliveryOrderTo(order, "Reading Room");
+        LibraryService.deliveryOrderTo(order, DELIVERY_DESK);
+        LibraryService.deliveryOrderTo(order, READING_ROOM);
 
         LibraryService.putReaderIntoBlackList(order);
     }
