@@ -39,6 +39,7 @@ public class Reader {
         return "Reader{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
+                ", isInBlackList=" + isInBlackList +
                 '}';
     }
 }

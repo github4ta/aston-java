@@ -20,6 +20,6 @@ public class App {
         LibraryService.deliveryOrderTo(order, "Delivery Desk");
         LibraryService.deliveryOrderTo(order, "Reading Room");
 
-        LibraryService.putReaderIntoBlackList(reader);
+        LibraryService.putReaderIntoBlackList(order);
     }
 }

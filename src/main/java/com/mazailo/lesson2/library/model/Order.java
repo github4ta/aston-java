@@ -3,16 +3,25 @@ package com.mazailo.lesson2.library.model;
 import java.util.Objects;
 
 public class Order {
-    private static int CURRENT_ORDER = 0;
+    private static int CURRENT_ORDER = 1;
     private int id;
     private Reader reader;
     private Book book;
     private String place;
+    private boolean isReturned;
 
     public Order(Reader reader, Book book) {
         this.reader = reader;
         this.book = book;
         id = CURRENT_ORDER++;
+    }
+
+    public boolean isReturned() {
+        return isReturned;
+    }
+
+    public void setReturned(boolean returned) {
+        isReturned = returned;
     }
 
     public String getPlace() {
@@ -66,6 +75,8 @@ public class Order {
                 "id=" + id +
                 ", reader=" + reader +
                 ", book=" + book +
+                ", place='" + place + '\'' +
+                ", isReturned=" + isReturned +
                 '}';
     }
 }

@@ -18,8 +18,11 @@ public class LibraryService {
         order.setPlace(place);
     }
 
-    public static void putReaderIntoBlackList(Reader reader) {
-        reader.setInBlackList(true);
+    public static void putReaderIntoBlackList(Order order) {
+        if (!order.isReturned()) {
+            Reader reader = order.getReader();
+            reader.setInBlackList(true);
+        }
     }
 
     public static Book getBookByTitle(String title) {
@@ -35,7 +38,7 @@ public class LibraryService {
     public static Book getBookByAuthor(String author) {
         List<Book> books = Catalog.getBooks();
         for(Book book : books) {
-            if (book.getTitle() == author) {
+            if (book.getAuthor() == author) {
                 return book;
             }
         }
@@ -45,7 +48,7 @@ public class LibraryService {
     public static Book getBookByIsbn(String isbn) {
         List<Book> books = Catalog.getBooks();
         for(Book book : books) {
-            if (book.getTitle() == isbn) {
+            if (book.getIsbn() == isbn) {
                 return book;
             }
         }
