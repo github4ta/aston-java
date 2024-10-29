@@ -8,20 +8,18 @@ import com.mazailo.lesson2.library.model.Reader;
 
 public class App {
     public static void main(String[] args) {
-        Book book = new Book("Red wings", "John Black", "123456789");
-        Reader reader = new Reader("John", "123");
+        Reader reader = new Reader("John Black", "123");
+        Book book = new Book("Red wings", "Tim White", "1234567890");
         Order order = LibraryService.placeOrder(reader, book);
-        System.out.println(order);
-        System.out.println(Catalog.getBooks());
 
-        book = new Book("Red wings", "John White", "123456789");
-        order = LibraryService.placeOrder(reader, book);
-        System.out.println(order);
-        System.out.println(Catalog.getBooks());
+        Catalog.addBook(book);
+        Book searchedBook = LibraryService.getBookByAuthor("Tim White");
+        searchedBook = LibraryService.getBookByTitle("Red wings");
+        searchedBook = LibraryService.getBookByIsbn("1234567890");
 
-        book = new Book("Red wings", "John Black", "123456789");
-        order = LibraryService.placeOrder(reader, book);
-        System.out.println(order);
-        System.out.println(Catalog.getBooks());
+        LibraryService.deliveryOrderTo(order, "Delivery Desk");
+        LibraryService.deliveryOrderTo(order, "Reading Room");
+
+        LibraryService.putReaderIntoBlackList(reader);
     }
 }
