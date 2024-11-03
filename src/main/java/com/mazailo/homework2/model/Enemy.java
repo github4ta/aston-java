@@ -1,6 +1,8 @@
 package com.mazailo.homework2.model;
 
-public class Enemy {
+import com.mazailo.homework2.behaviour.Mortal;
+
+public class Enemy implements Mortal {
 
     private int health;
 
@@ -18,5 +20,10 @@ public class Enemy {
 
     public void takeDamage(int damage) {
         health -= damage;
+    }
+
+    @Override
+    public boolean isAlive() {
+        return getHealth() > 0;
     }
 }
