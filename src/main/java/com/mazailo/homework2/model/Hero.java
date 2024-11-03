@@ -1,6 +1,6 @@
 package com.mazailo.homework2.model;
 
-public class Hero {
+public abstract class Hero {
     private final int HERO_DAMAGE = 1;
     private String name;
 

@@ -7,9 +7,6 @@ public class TrainingGround {
     public static void main(String[] args) {
         Enemy enemy = new Enemy(50);
 
-        Hero hero = new Hero("Wolf");
-        hero.attackEnemy(enemy);
-
         Warrior warrior = new Warrior("Titan");
         warrior.attackEnemy(enemy);
 
