@@ -1,23 +1,24 @@
 package com.mazailo.homework2;
 
-import com.mazailo.homework2.model.Archer;
-import com.mazailo.homework2.model.Hero;
-import com.mazailo.homework2.model.Mage;
-import com.mazailo.homework2.model.Warrior;
+import com.mazailo.homework2.model.*;
 
 public class TrainingGround {
 
     public static void main(String[] args) {
+        Enemy enemy = new Enemy(50);
+
         Hero hero = new Hero("Wolf");
-        hero.attackEnemy();
+        hero.attackEnemy(enemy);
 
         Warrior warrior = new Warrior("Titan");
-        warrior.attackEnemy();
+        warrior.attackEnemy(enemy);
 
         Mage mage = new Mage("Esmund");
-        mage.attackEnemy();
+        mage.attackEnemy(enemy);
 
         Archer archer = new Archer("Landazar");
-        archer.attackEnemy();
+        archer.attackEnemy(enemy);
+
+        System.out.println(enemy.getHealth());
     }
 }
