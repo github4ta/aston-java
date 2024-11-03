@@ -18,7 +18,7 @@ public class Archer extends Hero implements Mortal {
 
     @Override
     public void attackEnemy(Enemy enemy) {
-        System.out.println("Archer " + getName() + " is attacking the Enemy!");
+        System.out.println("Archer " + getName() + " is attacking the " + enemy.getClass().getSimpleName() + "!");
         enemy.takeDamage(ARCHER_DAMAGE);
     }
 }

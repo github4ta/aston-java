@@ -11,7 +11,7 @@ public class Giant extends Enemy {
     }
 
     public void attackHero(Hero hero) {
-        System.out.println("Enemy is attacking the hero " + hero.getName());
+        System.out.println("Giant is attacking the " + hero.getClass().getSimpleName() + " " + hero.getName());
         hero.takeDamage(GIANT_DAMAGE);
     }
 }

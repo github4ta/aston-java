@@ -26,7 +26,7 @@ public abstract class Hero implements Mortal {
     }
 
     public void attackEnemy(Enemy enemy) {
-        System.out.println("Hero " + getName() + " is attacking the Enemy!");
+        System.out.println("Hero " + getName() + " is attacking the " + enemy.getClass().getSimpleName() + "!");
         enemy.takeDamage(HERO_DAMAGE);
     }
 

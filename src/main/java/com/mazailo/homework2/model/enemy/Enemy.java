@@ -25,8 +25,8 @@ public class Enemy implements Mortal {
     }
 
     public void attackHero(Hero hero) {
-        System.out.println("Enemy is attacking the hero " + hero.getName());
-        hero.takeDamage(ENEMY_DAMAGE);
+        System.out.println("Enemy is attacking the " + hero.getClass().getSimpleName() + " " + hero.getName());
+                hero.takeDamage(ENEMY_DAMAGE);
     }
 
     @Override

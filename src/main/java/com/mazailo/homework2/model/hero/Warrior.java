@@ -13,7 +13,7 @@ public class Warrior extends Hero implements Mortal {
 
     @Override
     public void attackEnemy(Enemy enemy) {
-        System.out.println("Warrior " + getName() + " is attacking the Enemy!");
+        System.out.println("Warrior " + getName() + " is attacking the " + enemy.getClass().getSimpleName() + "!");
         enemy.takeDamage(WARRIOR_DAMAGE);
     }
 

@@ -1,7 +1,9 @@
 package com.mazailo.homework2;
 
+import com.mazailo.homework2.model.enemy.Dragon;
 import com.mazailo.homework2.model.enemy.Enemy;
 import com.mazailo.homework2.model.enemy.Giant;
+import com.mazailo.homework2.model.enemy.Zombie;
 import com.mazailo.homework2.model.hero.Archer;
 import com.mazailo.homework2.model.hero.Hero;
 import com.mazailo.homework2.model.hero.Mage;
@@ -10,9 +12,11 @@ import com.mazailo.homework2.model.hero.Warrior;
 public class BattleGround {
 
     public static void main(String[] args) {
-        Enemy enemy = new Enemy(50);
-        Giant giant = new Giant(100);
-        Enemy[] enemies = new Enemy[]{enemy, giant};
+        Enemy enemy = new Enemy(10);
+        Giant giant = new Giant(50);
+        Dragon dragon = new Dragon(20);
+        Zombie zombie = new Zombie(5);
+        Enemy[] enemies = new Enemy[]{enemy, giant, dragon, zombie};
 
         Hero archer = new Archer("Landazar", 10);
         Hero warrior = new Warrior("Titan", 20);
@@ -24,20 +28,27 @@ public class BattleGround {
 
         printEnemiesHealth(enemies);
         printHeroesHealth(heroes);
-        System.out.println("Lets start the battle!");
+        System.out.println("LETS START THE BATTLE!");
 
         while (isAnyEnemyAlive(enemies) && isAnyHeroAlive(heroes)) {
             hero = getRandomHero(heroes);
             if (hero.isAlive()) {
                 enemyInBattle = getRandomEnemy(enemies);
                 hero.attackEnemy(enemyInBattle);
-                enemyInBattle.attackHero(hero);
-                System.out.println("Hero " + hero.getName() + " health ..." + hero.getHealth());
-                System.out.println("Enemy " + enemyInBattle.getHealth() + " health ..." + enemyInBattle.getHealth());
+                System.out.println(enemyInBattle.getClass().getSimpleName() + " health " + enemyInBattle.getHealth());
+                if (enemyInBattle.isAlive()) {
+                    enemyInBattle.attackHero(hero);
+                    System.out.println(hero.getClass().getSimpleName() + " " + hero.getName() + " health " + hero.getHealth());
+                    if (!hero.isAlive()) {
+                        System.out.println(hero.getClass().getSimpleName() + " " + hero.getName() + " died");
+                    }
+                } else {
+                    System.out.println(enemyInBattle.getClass().getSimpleName() + " died");
+                }
             }
         }
 
-        System.out.println("Game over.");
+        System.out.println("GAME OVER.");
         printEnemiesHealth(enemies);
         printHeroesHealth(heroes);
     }
