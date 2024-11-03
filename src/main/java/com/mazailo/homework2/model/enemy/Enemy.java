@@ -1,9 +1,11 @@
-package com.mazailo.homework2.model;
+package com.mazailo.homework2.model.enemy;
 
 import com.mazailo.homework2.behaviour.Mortal;
+import com.mazailo.homework2.model.hero.Hero;
 
 public class Enemy implements Mortal {
 
+    private final int ENEMY_DAMAGE = 3;
     private int health;
 
     public Enemy(int health) {
@@ -20,6 +22,11 @@ public class Enemy implements Mortal {
 
     public void takeDamage(int damage) {
         health -= damage;
+    }
+
+    public void attackHero(Hero hero) {
+        System.out.println("Enemy is attacking the hero " + hero.getName());
+        hero.takeDamage(ENEMY_DAMAGE);
     }
 
     @Override
