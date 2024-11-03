@@ -1,6 +1,7 @@
 package com.mazailo.homework2.model;
 
 public class Hero {
+    private final int HERO_DAMAGE = 1;
     private String name;
 
     public Hero(String name) {
@@ -11,7 +12,8 @@ public class Hero {
         return name;
     }
 
-    public void attackEnemy() {
+    public void attackEnemy(Enemy enemy) {
         System.out.println("Hero " + getName() + " is attacking the Enemy!");
+        enemy.takeDamage(HERO_DAMAGE);
     }
 }
