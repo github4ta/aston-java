@@ -1,4 +1,5 @@
 package com.mazailo.lesson2.library.model;
+// com.mazailo.lesson2.library.model.Book
 
 import java.util.Objects;
 
